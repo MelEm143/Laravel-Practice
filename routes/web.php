@@ -39,4 +39,4 @@ Route::get('/users', [UserController::class, 'index']);
 
 Route::get('/user/{id}',  [UserController::class, 'show']);
 
-Route::get('/students', [StudentController::class, 'index']);
+Route::get('/student/{id}', [StudentController::class, 'show']);
