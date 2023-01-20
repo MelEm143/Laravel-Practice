@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,10 +32,11 @@ use Illuminate\Support\Facades\Route;
 //update - update a data
 //destroy - destroy a data
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [StudentController::class, 'index']);
 
 Route::get('/users', [UserController::class, 'index']);
 
 Route::get('/user/{id}',  [UserController::class, 'show']);
+
+Route::get('/students', [StudentController::class, 'index']);
