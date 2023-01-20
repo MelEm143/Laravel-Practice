@@ -1,6 +1,6 @@
+{{-- @dd(auth()->user()->name) --}}
 @include('partials.header')
 <x-nav />
-
 <header class="max-w-lg mx-auto mt-5">
     <a href="#">
         <h1 class="text-4xl font-bold text-white text-center">Student List</h1>
@@ -12,7 +12,7 @@
             <thead class="text-xs text gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="py-3 px-6">First Name</th>
-                    <th scope="col" class="py-3 px-6">Middle Name</th>
+                    <th scope="col" class="py-3  px-6">Middle Name</th>
                     <th scope="col" class="py-3 px-6">Email</th>
                     <th scope="col" class="py-3 px-6">Age</th>
                 </tr>

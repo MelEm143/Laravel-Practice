@@ -33,6 +33,11 @@ use Illuminate\Support\Facades\Route;
 //destroy - destroy a data
 
 
-Route::get('/', [StudentController::class, 'index']);
+Route::get('/', [StudentController::class, 'index'])->middleware('auth');
 Route::get('/register', [UserController::class, 'register']);
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login/process', [UserController::class, 'process']);
+
+Route::post('/logout', [UserController::class, 'logout']);
+
+Route::post('/store', [UserController::class, 'store']);

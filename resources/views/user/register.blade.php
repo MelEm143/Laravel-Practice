@@ -7,23 +7,44 @@
 <main class="bg-white max-w-lg mx-auto p-8 my-10 rounded-lg shadow-2xl">
     <section>
         <h3 class="font-bold text-2xl">Welcome to Student System</h3>
-        <p class="text-gray-600 pt-2">Sign in to your account</p>
+        <p class="text-gray-600 pt-2">Sign in to your account <a href="/login" class="text-purple-600 font-bold">Here</a></p>
     </section>
     <section class="mt-10">
-        <form action="" class="flex flex-col">
+        <form action="/store" class="flex flex-col" method="POST">
+            @csrf
             <div class="mb-6 pt-3 rounded bg-gray-200">
-                <label for="name" class="block text gray-700 text-sm font-bold mb-3">Name</label>
-                <input type="text"
-                    class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-400 px-3">
-            </div>
+                <label for="name"class="block text gray-700 text-sm font-bold mb-3">Name</label>
+                <input type="text" name="name" value="{{old('name')}}" autocomplete="off"
+                class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-400 px-3">
+                @error('name')
+                <p class="text-red-500 text-xs mt-2">
+                    {{ $message }}
+                </p>
+                @enderror
+             </div>
             <div class="mb-6 pt-3 rounded bg-gray-200">
                 <label for="" class="block text gray-700 text-sm font-bold mb-3">Email</label>
-                <input type="email"
+                <input type="email" name="email" value="{{old('email')}}" autocomplete="off"
                     class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-400 px-3">
-            </div>
+                    @error('email')
+                    <p class="text-red-500 text-xs mt-2">
+                        {{ $message }}
+                    </p>
+                    @enderror
+                </div>
             <div class="mb-6 pt-3 rounded bg-gray-200">
-                <label for="password" class="block text gray-700 text-sm font-bold mb-3">Password</label>
-                <input type="password"
+                <label for="password" class="block text gray-700 text-sm font-bold mb-3">Confirm Password</label>
+                <input type="password" name="password"
+                    class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-400 px-3">
+                    @error('password')
+                    <p class="text-red-500 text-xs mt-2">
+                        {{ $message }}
+                    </p>
+                    @enderror
+                </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+                <label for="password_confirmation" class="block text gray-700 text-sm font-bold mb-3">Password</label>
+                <input type="password" name="password_confirmation"
                     class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-400 px-3">
             </div>
             <button
