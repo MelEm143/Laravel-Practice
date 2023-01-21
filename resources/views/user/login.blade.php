@@ -18,11 +18,7 @@
                         {{ $message }}
                     </p>
                     @enderror
-            <div class="mb-6 pt-3 rounded bg-gray-200">
-                <label for="" class="block text gray-700 text-sm font-bold mb-3">Email</label>
-                <input type="email" name="email" autocomplete="off"
-                    class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-400 px-3">
-            </div>
+        
             <div class="mb-6 pt-3 rounded bg-gray-200">
                 <label for="password" class="block text gray-700 text-sm font-bold mb-3">Password</label>
                 <input type="password" name="password"

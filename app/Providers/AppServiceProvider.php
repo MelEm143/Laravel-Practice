@@ -29,8 +29,8 @@ class AppServiceProvider extends ServiceProvider
 
         View::share('title', 'Student Admin');
 
-        View::composer('students.index', function($view){
-            $view->with('students', Students::all());
-        });
+        // View::composer('students.index', function($view){
+        //     $view->with('students', Students::all());
+        // });
     }
 }

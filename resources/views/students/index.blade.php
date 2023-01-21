@@ -36,6 +36,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="p-6 p-4 mx-auto bottom-0 fixed">
+            {{ $students->links() }}
+        </div>
     </div>
 </section>
 @include('partials.footer')
